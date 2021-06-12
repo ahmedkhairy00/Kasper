@@ -44,6 +44,15 @@ iconLeft.onclick = function slideLeft(){
             }
         }
 }
+
+/* Change Images From Bullts To Phone*/
+for( let i = 0; i < bullts.length; i++) {
+    bullts[i].addEventListener('click', function(){
+    document.querySelector('.bullats .active').classList.remove('active');
+    this.classList.add('active');
+    imgShow.style.backgroundImage = "url('images/download"+ (i+1) +".jpg')";
+    });
+}
   /* Use Aos Animation Libarary */
     AOS.init();
 
@@ -64,9 +73,6 @@ window.onload = function removeScroll(){
 const shuffleIcon = document.querySelectorAll('.shuffle li');
 const itemFilter = document.querySelectorAll('.box');
 
-
- 
-
     for (let i = 0 ; i < shuffleIcon.length; i++) {
       if (shuffleIcon[i].addEventListener('click' , function shuffle(){
 
@@ -80,8 +86,7 @@ const itemFilter = document.querySelectorAll('.box');
          for (let j = 0 ; j < itemFilter.length; j++){
              itemFilter[j].classList.remove('show');
              itemFilter[j].classList.add('hide');
-
-
+             
              if (itemFilter[j].getAttribute('data-item') == dataTarget || dataTarget == 'all') {
                 itemFilter[j].classList.remove('hide');
                 itemFilter[j].classList.add('show');
@@ -90,15 +95,12 @@ const itemFilter = document.querySelectorAll('.box');
 
 /* Shuffle testimon div in Skills */
 let  parentDiv = document.querySelectorAll('.testimonials .testimon1');
-console.log(parentDiv);
 let  btns = document.querySelector('.testimonials .bullts').children;
-console.log(btns);
 
 for (let i = 0; i < btns.length; i++) {
     btns[i].addEventListener('click' , function(){
         document.querySelector('.bullts .active').classList.remove('active');
         this.classList.add('active');
-        console.log(document.querySelector('.testimonials .show'));
         document.querySelector('.testimonials .show').classList.remove('show');
         parentDiv[i].classList.add('show');
     });
