@@ -199,7 +199,7 @@ display:flex;
 .landing{
     position: relative;
     background-image: url(../images/download1.jpg);
-    height: 100vh;
+    height: calc(100vh - 55.8px);
     background-size: cover;
     z-index: 1;
     background-attachment: fixed;
