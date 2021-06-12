@@ -199,11 +199,18 @@ display:flex;
 .landing{
     position: relative;
     background-image: url(../images/download1.jpg);
-    height: calc(100vh - 55.8px);
+    height: 100vh;
     background-size: cover;
     z-index: 1;
     background-attachment: fixed;
 }
+
+@media (max-width : 480px){
+.landing {
+    height: calc(100vh - 55.8px);
+}
+}
+
 .landing .overlay{
     position: absolute;
     left:0;
