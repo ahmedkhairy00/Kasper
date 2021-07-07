@@ -16,41 +16,55 @@ icon.onclick = function toggleUl(){
 }
 
 /* Function To Change Images Right */
-iconRight.onclick = function slideRight(){
-        if (counter == 3) {
-                    return 0;
+iconRight.addEventListener('click' , function (event){
+	
+	 event = iconRight.touchend;
+	
+        if (counter == bullts.length - 1 ) {
+			
+			return 0;
+			
         } 
         else {
                 counter++;
-                imgShow.style.backgroundImage = "url('images/download"+ counter +".jpg')";
+				iconRight.style.cursor = "pointer";
+            }
+	
+	 			imgShow.style.backgroundImage = "url('images/download"+ counter +".jpg')";
                 for (let i = 0 ; i < bullts.length; i++){
                     bullts[i].classList.remove('active');
-                    bullts[counter - 1].classList.add('active');
+                    bullts[counter].classList.add('active');
                 }
-            }
-}
+});
 
 /* Function To Change Images Left */
-iconLeft.onclick = function slideLeft(){
-    if (counter == 1) {
-        return 0;
+iconLeft.addEventListener('click' , function (event){
+	
+	 event = iconLeft.touchend;
+    if (counter == 0) {
+		
+		return 0;
     }
     else{
-        counter--;            
+        counter--; 	
+		iconLeft.style.cursor = "pointer";
+
+        }
+	
+	
             imgShow.style.backgroundImage = "url('images/download"+ counter +".jpg')";
+		
             for (let i = 0 ; i < bullts.length; i++){
                 bullts[i].classList.remove('active');
-                bullts[counter - 1].classList.add('active');
+                bullts[counter].classList.add('active');
             }
-        }
 }
-
 /* Change Images From Bullts To Phone*/
 for( let i = 0; i < bullts.length; i++) {
     bullts[i].addEventListener('click', function(){
-    document.querySelector('.bullats .active').classList.remove('active');
+	document.querySelector('.bullats ul li.active').classList.remove('active');
     this.classList.add('active');
-    imgShow.style.backgroundImage = "url('images/download"+ (i+1) +".jpg')";
+    imgShow.style.backgroundImage = "url('images/download"+ (i) +".jpg')";
     });
 }
   /* Use Aos Animation Libarary */
