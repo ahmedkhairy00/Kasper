@@ -18,7 +18,6 @@ icon.onclick = function toggleUl(){
 /* Function To Change Images Right */
 iconRight.addEventListener('click' , function (event){
 	
-	 event = iconRight.touchend;
 	
         if (counter == bullts.length - 1 ) {
 			
@@ -40,7 +39,6 @@ iconRight.addEventListener('click' , function (event){
 /* Function To Change Images Left */
 iconLeft.addEventListener('click' , function (event){
 	
-	 event = iconLeft.touchend;
     if (counter == 0) {
 		
 		return 0;
